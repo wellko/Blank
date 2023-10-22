@@ -47,7 +47,7 @@ const MapBlock = () => {
 	return (
 		<div className='text-3xl text-center pacific w-full h-[900px]'>
 			<p>Ожидаем Вас в ресторане Royal</p>
-			<a href={'https://go.2gis.com/3v4jw'} className='text-blue-500' target={'_blank'}>по адрессу с.Кок-Джар ул.Мадиева 18\1</a>
+			<a href={'https://go.2gis.com/3v4jw'} className='text-blue-500' target={'_blank'} rel={'noreferrer'}>по адрессу с.Кок-Джар ул.Мадиева 18\1</a>
 			<p>в какое то время</p>
 			<div>
 				<div>{timeRemaining.days} дней</div>
@@ -56,6 +56,7 @@ const MapBlock = () => {
 				<div>{timeRemaining.seconds} секунд</div>
 			</div>
 			<p>Пожалуйста, подтвердите свое присутствие в Форме:</p>
+			<p>Ps. Бакай любит Валеру больше Саи</p>
 		</div>
 	);
 };
