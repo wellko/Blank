@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from "react";
+import Letter from "./components/Letter";
+import MainInfo from "./components/MainInfo";
+import SouthIcon from "@mui/icons-material/South";
+import MainText from "./components/MainText";
+import MapBlock from "./components/MapBlock";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [clicked, setClicked] = useState(false);
+	const onClick = () => {
+		setClicked(true);
+	}
+	return (
+		<div className="App">
+			{clicked? <>
+				<MainInfo/>
+				<MainText/>
+				<MapBlock/>
+				</>
+				: <Letter onClick={onClick} />}
+			{clicked && <p className='text-purple-500 animate-bounce sticky bottom-[50px] text-center '><SouthIcon/></p>}
+		</div>
+	);
 }
 
 export default App;
